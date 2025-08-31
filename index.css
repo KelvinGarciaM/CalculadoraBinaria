@@ -1,0 +1,133 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+   
+    background-image: url('/resources/wukong.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.containerGlass {
+    max-width: 1300px;
+    padding: 2.5rem;
+    border-radius: 1.2rem;
+    background: rgba(43, 43, 43, 0.55);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.25),
+        0 12px 32px rgba(71, 73, 100, 0.35);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #fff;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    html, body {
+        overflow: auto;
+    }
+
+    .containerGlass {
+        padding: 1.5rem;
+    }
+}
+
+/* Opcional: efecto sutil al pasar el mouse */
+.containerGlass:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.3),
+    0 16px 40px rgba(71, 73, 100, 0.4);
+}
+
+
+.floating-input {
+  position: relative;
+  margin-bottom: 30px !important;
+}
+
+/* Inputs flotantes */
+.floating-input input {
+  height: 8%;
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 1px solid #8b8a8a;
+  /* borde visible aunque sea transparente el fondo */
+  border-radius: 6px;
+  background-color: transparent;
+  /* fondo transparente */
+  color: #fff;
+  /* texto blanco */
+  outline: none;
+}
+
+/* Labels flotantes */
+.floating-input label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background-color: transparent;
+  /* fondo transparente */
+  padding: 0 4px;
+}
+
+/* Cuando el input tiene foco o valor */
+.floating-input input:focus+label,
+.floating-input input:not(:placeholder-shown)+label {
+  top: -22px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* Select flotante */
+.floating-input select {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+ border: 1px solid #8b8a8a;
+  border-radius: 6px;
+  background-color: transparent;
+  /* fondo transparente */
+  color: #fff;
+  /* texto blanco */
+  outline: none;
+  appearance: none;
+  /* quita estilo por defecto del select */
+}
+
+/* Opciones del select */
+.floating-input select option {
+  background-color: #2a2a2a;
+  /* las opciones necesitan fondo para poder leerse */
+  color: #fff;
+}
+
+/* Cuando el select tiene foco o valor */
+.floating-input select:focus+label,
+.floating-input select:not([value=""])+label {
+  top: -22px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* Evitar fondo blanco de autocompletado en Chrome/Edge */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 0px #2a2a2a00 inset;
+  /* fondo del input */
+  -webkit-text-fill-color: #fff;
+  /* texto blanco */
+  transition: background-color 5000s ease-in-out 0s;
+  /* hack para Chrome */
+}

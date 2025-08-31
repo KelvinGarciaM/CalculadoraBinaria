@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binarios Calculos</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <!-- Asegúrate de agregar el CDN de Bootstrap Icons en tu <head> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center g-4">
+            <!-- Columna principal con inputs y botón -->
+            <div class="col-12 col-lg-6">
+                <div class="containerGlass p-4 rounded shadow-sm">
+                    <div class="text-center mb-4">
+                        <h1>Curso Arquitectura de Computadoras</h1>
+                        <h2 class="h4">Tarea 2</h2>
+                    </div>
+
+                    <div class="floating-input mb-3">
+                        <select id="accion" placeholder=" ">
+                            <option value="0" disabled selected>Seleccione acción</option>
+                            <option value="1">Suma</option>
+                            <option value="2">Resta</option>
+                            <option value="3">Multiplicación</option>
+                            <option value="4">División</option>
+                        </select>
+                        <label for="accion">¿Qué acción desea realizar?</label>
+                    </div>
+
+                    <div class="floating-input mb-3">
+                        <input type="text" id="oneBinario" placeholder=" ">
+                        <label for="oneBinario">Ingrese el primer número binario</label>
+                        <strong class="text-danger d-none" id="errorOne">Este campo no puede estar vacío *</strong>
+                    </div>
+
+                    <div class="floating-input" style="margin-bottom: 0 !important;">
+                        <input type="text" id="twoBinario" placeholder=" ">
+                        <label for="twoBinario">Ingrese el segundo número binario</label>
+                        <strong class="text-danger d-none" id="errorTwo">Este campo no puede estar vacío *</strong>
+                    </div>
+
+                    <button class="btn btn-primary mt-4 w-50" id="btnCalcular"><i class="bi bi-calculator"></i>Calcular</button>
+                    <button class="btn btn-danger mt-4 w-30" id="btnReseat"> <i class="bi bi-bootstrap-reboot"></i></button>
+
+
+                    <div class="floating-input mt-4" style="margin-bottom: 10px !important;">
+                        <input type="text" id="resultado" class="text-white" readonly
+                            placeholder="Aqui se mostrara el resultado">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha con manual de uso -->
+            <div class="col-12 col-lg-4">
+                <div class="containerGlass p-4 rounded shadow-sm ">
+                    <h4 class="mb-3 text-center text-white">Manual de uso</h4>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item bg-transparent border-0 d-flex align-items-start text-white">
+                            <i class="bi bi-clipboard-check me-2 fs-5 text-white"></i>
+                            Seleccione la acción que desea realizar en el combobox.
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 d-flex align-items-start text-white">
+                            <i class="bi bi-123 me-2 fs-5 text-white"></i>
+                            Ingrese los dos números binarios a los cuales desea realizar el cálculo.
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 d-flex align-items-start text-white">
+                            <i class="bi bi-calculator me-2 fs-5 text-white"></i>
+                            Haga clic en "Calcular" y el resultado se mostrará en el campo correspondiente.
+                        </li>
+                    </ol>
+                </div>
+                 <!-- Nuevo div con gif -->
+                <div class="containerGlass p-4 rounded shadow-sm mt-4 text-center">
+                    <img src="/resources/Nft Coding GIF.gif" style="width: 200px;"="Ejemplo GIF" class="img-fluid">
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="text-center " style="color: aliceblue; margin-top: 3% !important;" >
+            <p class="mb-3">&copy; 2025 Desarrollado por <span class="fw-semibold">Kelvin Garcia Medrano</span></p>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
